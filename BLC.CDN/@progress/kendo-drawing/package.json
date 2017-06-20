@@ -1,0 +1,137 @@
+{
+  "@progress": {
+    "friendlyName": "Drawing"
+  },
+  "_args": [
+    [
+      {
+        "raw": "@progress/kendo-drawing@^1.0.3",
+        "scope": "@progress",
+        "escapedName": "@progress%2fkendo-drawing",
+        "name": "@progress/kendo-drawing",
+        "rawSpec": "^1.0.3",
+        "spec": ">=1.0.3 <2.0.0",
+        "type": "range"
+      },
+      "C:\\Users\\b21480\\Documents\\_Projects - Local\\HRIS"
+    ]
+  ],
+  "_from": "@progress/kendo-drawing@>=1.0.3 <2.0.0",
+  "_id": "@progress/kendo-drawing@1.0.3",
+  "_inCache": true,
+  "_location": "/@progress/kendo-drawing",
+  "_nodeVersion": "6.10.3",
+  "_npmUser": {},
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@progress/kendo-drawing@^1.0.3",
+    "scope": "@progress",
+    "escapedName": "@progress%2fkendo-drawing",
+    "name": "@progress/kendo-drawing",
+    "rawSpec": "^1.0.3",
+    "spec": ">=1.0.3 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npm.telerik.com/@progress%2fkendo-drawing/-/kendo-drawing-1.0.3.tgz",
+  "_shasum": "0ad3d4e1eedf3cc7f8255f926e16b0987b9dd776",
+  "_shrinkwrap": null,
+  "_spec": "@progress/kendo-drawing@^1.0.3",
+  "_where": "C:\\Users\\b21480\\Documents\\_Projects - Local\\HRIS",
+  "author": {
+    "name": "Progress"
+  },
+  "bugs": {
+    "url": "https://github.com/telerik/kendo-drawing/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100
+    }
+  },
+  "dependencies": {},
+  "description": "Kendo UI Drawing",
+  "devDependencies": {
+    "@krux/condition-jenkins": "1.0.1",
+    "@progress/kendo-file-saver": "^1.0.0",
+    "@progress/kendo-theme-default": "^2.0.0",
+    "@progress/kendo-typescript-tasks": "2.11.0",
+    "@telerik/eslint-config": "^1.0.0",
+    "@telerik/kendo-package-tasks": "^1.8.3",
+    "core-js": "2.4.1",
+    "cz-conventional-changelog": "^1.1.5",
+    "ghooks": "^1.0.3",
+    "gulp": "3.9.1",
+    "semantic-release": "^4.3.5",
+    "typings": "2.1.0",
+    "validate-commit-msg": "^1.1.1"
+  },
+  "dist": {
+    "shasum": "0ad3d4e1eedf3cc7f8255f926e16b0987b9dd776",
+    "tarball": "http://registry.npm.telerik.com/@progress%2fkendo-drawing/-/kendo-drawing-1.0.3.tgz"
+  },
+  "gitHead": "116a46e5f63159cad2928d75201a0c3e69b8728b",
+  "homepage": "https://github.com/telerik/kendo-drawing#readme",
+  "jsnext:main": "main.js",
+  "keywords": [
+    "Kendo UI",
+    "Drawing",
+    "Vector Graphics",
+    "SVG",
+    "Canvas"
+  ],
+  "license": "See license in LICENSE.md",
+  "main": "dist/npm/main.js",
+  "module": "main.js",
+  "name": "@progress/kendo-drawing",
+  "optionalDependencies": {},
+  "publishConfig": {
+    "registry": "https://registry.npm.telerik.com"
+  },
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "release": {
+    "branch": "master",
+    "debug": false,
+    "verifyConditions": {
+      "path": "./node_modules/@krux/condition-jenkins"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telerik/kendo-drawing.git"
+  },
+  "scripts": {
+    "api-check": "gulp api-check",
+    "build-package": "gulp build-module && gulp build-cdn",
+    "e2e": "gulp e2e",
+    "lint": "gulp lint",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "gulp test",
+    "typings": "typings prune && typings install",
+    "verify-npm": "gulp verify-npm"
+  },
+  "typings": "main",
+  "version": "1.0.3"
+}

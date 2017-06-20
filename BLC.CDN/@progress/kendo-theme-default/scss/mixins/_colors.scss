@@ -1,0 +1,48 @@
+@function tint( $color, $percentage: 10 ) {
+    @return mix( white, $color, $percentage );
+}
+
+@function shade( $color, $percentage: 10 ) {
+    @return mix( black, $color, $percentage );
+}
+
+
+@function try-darken( $color, $amount, $threshold: black ) {
+    $amount: if(unitless($amount), $amount, ($amount / 1%));
+
+    $result: darken( $color, $amount );
+    $alt-result: darken( $color, ($amount - 1) );
+
+    @if ($result == $threshold) and ($alt-result == $threshold) {
+        @return lighten( $color, $amount );
+    }
+    @return $result;
+}
+
+@function try-lighten( $color, $amount, $threshold: white ) {
+    $amount: if(unitless($amount), $amount, ($amount / 1%));
+
+    $result: lighten( $color, $amount );
+    $alt-result: lighten( $color, ($amount - 1) );
+
+    @if ($result == $threshold) and ($alt-result == $threshold) {
+        @return darken( $color, $amount );
+    }
+    @return $result;
+}
+
+
+@function yiq($color) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+    @return $yiq;
+}
+@function contrast($color, $dark: #000000, $light: #ffffff) {
+    $yiq: yiq($color);
+    $out: if($yiq >= 128, $dark, $light);
+    @return $out;
+}
