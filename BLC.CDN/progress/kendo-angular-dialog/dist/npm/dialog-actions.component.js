@@ -1,0 +1,58 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+/**
+ * Specifies the action buttons for the `DialogComponent`.
+ */
+var DialogActionsComponent = (function () {
+    function DialogActionsComponent() {
+        /**
+         * Fires when the user clicks on actions specified by the actions.
+         */
+        this.action = new core_1.EventEmitter();
+    }
+    Object.defineProperty(DialogActionsComponent.prototype, "className", {
+        get: function () {
+            return true;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @hidden
+     */
+    DialogActionsComponent.prototype.actionTemplate = function () {
+        return this.actions instanceof core_1.TemplateRef;
+    };
+    /**
+     * @hidden
+     */
+    DialogActionsComponent.prototype.onButtonClick = function (action) {
+        this.action.emit(action);
+    };
+    /**
+     * @hidden
+     */
+    DialogActionsComponent.prototype.buttonClass = function (action) {
+        var classes = ["k-button"];
+        if (action.primary) {
+            classes.push("k-primary");
+        }
+        return classes.join(" ");
+    };
+    return DialogActionsComponent;
+}());
+DialogActionsComponent.decorators = [
+    { type: core_1.Component, args: [{
+                selector: 'kendo-dialog-actions',
+                template: "\n    <ng-content *ngIf=\"!actions\"></ng-content>\n    <ng-container *ngIf=\"!actionTemplate()\">\n      <button\n        [ngClass]=\"buttonClass(action)\"\n        (click)=\"onButtonClick(action)\"\n        *ngFor=\"let action of actions\">\n        {{ action.text }}\n      </button>\n    </ng-container>\n    <ng-template [ngTemplateOutlet]=\"actions\" *ngIf=\"actionTemplate()\"></ng-template>\n  "
+            },] },
+];
+/** @nocollapse */
+DialogActionsComponent.ctorParameters = function () { return []; };
+DialogActionsComponent.propDecorators = {
+    'actions': [{ type: core_1.Input },],
+    'action': [{ type: core_1.Output },],
+    'className': [{ type: core_1.HostBinding, args: ['class.k-button-group',] }, { type: core_1.HostBinding, args: ['class.k-dialog-buttongroup',] }, { type: core_1.HostBinding, args: ['class.k-dialog-button-layout-stretched',] },],
+};
+exports.DialogActionsComponent = DialogActionsComponent;
